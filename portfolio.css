@@ -183,6 +183,23 @@ header img {
   margin-bottom: 95px;
 }
 
+iframe {
+  margin: 0 auto;
+  margin-left: 120px;
+}
+
+/* rolling */
+#header {
+  text-align: center;
+}
+.face {
+  color: red;
+}
+.back { 
+  color: red;
+  opacity: 0.4;
+}
+
 /* call-to-action */
 
 .call-to-action {
