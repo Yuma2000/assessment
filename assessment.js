@@ -1,9 +1,9 @@
 'use strict';
 
 {
-  document.write('1足す2は');
-  document.write(1 + 2);
-  document.write('です');
+//   document.write('1足す2は');
+//   document.write(1 + 2);
+//   document.write('です');
 
   var age = 16;
   var member = true;
@@ -11,7 +11,7 @@
 
   if(age <= 15) fee = 800;
   else if(member) fee = 1000;
-  document.write(fee);
+//   document.write(fee);
 
   var names = ['あ', 'い', 'う', 'え', 'お', 'か', 'き', 'く', 'け', 'こ'];
   for(var i = 0; i < names.length; i++){
