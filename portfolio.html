@@ -111,6 +111,26 @@
       </div>
 
     </section>
+
+    <section class="youtube">
+      <div class="container">
+        <h1 data-subtitle="- Movie -" class="section-title">おすすめ動画</h1>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/xfTodncOHAc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <section class="birth-time">
+      <div class="container">
+        <h1 id="birth-time" class="section-title"></h1>
+      </div>
+    </section>
+
+    <section class="rolling">
+      <div class="container">
+        <h1 id="header" class="section-title face">地球はまわる</h1>
+      </div>
+    </section>
+
     <section class="call-to-action orange-bg">
       <div class="container">
         <h1 class="section-title">プログラミングを勉強してみよう！</h1>
@@ -123,77 +143,6 @@
       <p>&copy; takeda.com</p>
     </footer>
 
-    <script>
-      {
-        const timer = document.getElementById('timer');
-        const start = document.getElementById('start');
-        const stop = document.getElementById('stop');
-        const reset = document.getElementById('reset');
-
-        let startTime;
-        let timeoutId;
-        let elapsedTime = 0;
-
-        function countUp(){
-          const d = new Date(Date.now() - startTime + elapsedTime);
-          const m = d.getMinutes();
-          const s = d.getSeconds();
-          const ms = d.getMilliseconds();
-          timer.textContent = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}.${String(ms).padStart(3, '0')}`;
-
-          timeoutId = setTimeout(() => {
-            countUp();
-          }, 10);
-        }
-
-        function setButtonStateInitial() {
-          start.classList.remove('inactive');
-          stop.classList.add('inactive');
-          reset.classList.add('inactive');
-        }
-
-        function setButtonStateRunning() {
-          start.classList.add('inactive');
-          stop.classList.remove('inactive');
-          reset.classList.add('inactive');
-        }
-
-        function setButtonStateStopped() {
-          start.classList.remove('inactive');
-          stop.classList.add('inactive');
-          reset.classList.remove('inactive');
-        }
-
-        setButtonStateInitial();
-
-        start.addEventListener('click', () => {
-          if(start.classList.contains('inactive') === true) {
-            return;
-          }
-          setButtonStateRunning();
-          startTime = Date.now();
-          countUp();
-        })
-
-        stop.addEventListener('click', () => {
-          if(stop.classList.contains('inactive') === true) {
-            return;
-          }
-          setButtonStateStopped();
-          clearTimeout(timeoutId);
-          elapsedTime += Date.now() - startTime;
-        })
-
-        reset.addEventListener('click', () => {
-          if(reset.classList.contains('inactive') === true) {
-            return;
-          }
-          setButtonStateInitial();
-          timer.textContent = '00:00.000';
-          elapsedTime = 0;
-        })
-      }
-
-    </script>
+    <script src="portfolio.js"></script>
   </body>
 </html>
