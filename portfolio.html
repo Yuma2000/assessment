@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>My Portfolio</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <header class="orange-bg">
+      <div class="container">
+        <h1>My Portfolio</h1>
+        <p>Welcome to my website!</p>
+        <a href="#" target="_blank"
+        class="btn">新しく開く <i class="fas fa-external-link-alt"></i></a>
+        <img src="img/top.png"
+        width="480" height="270"
+         alt="Dotinstall Paneの画像">
+      </div>
+    </header>
+
+    <section class="stopwatch">
+      <div class="container">
+        <h1 data-subtitle="- Stop watch -" class="section-title">ストップウォッチ</h1>
+        <div id="timer">00:00.000</div>
+        <div class="controls">
+          <div  class="watch-btn" id="start">Start</div>
+          <div  class="watch-btn" id="stop">Stop</div>
+          <div  class="watch-btn" id="reset">Reset</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <h1 data-subtitle="- Gamees -" class="section-title">ちょっとしたゲーム集</h1>
+        <section class="feature">
+          <img src="img/work1.png"
+          width="420" height="270" alt="特徴１">
+          <div class="desc">
+            <h1>あなたのいいところ診断</h1>
+            <p>あなたの名前からあなたのいいところを診断します。<br>
+              診断結果をツイートすることもできます！
+            </p>
+            <a href="https://yuma2000.github.io/assessment/assessment.html" target="_blank"
+        class="btn">ゲームをする <i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </section>
+        <section class="feature">
+          <img src="img/work2.png"
+          width="420" height="270" alt="特徴２">
+          <div class="desc">
+            <h1>おみくじ</h1>
+            <p>ボタンを押して今日の運勢を占ってみよう！</p>
+            <a href="https://yuma2000.github.io/assessment/omikuzi.html" target="_blank"
+        class="btn">ゲームをする <i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </section>
+        <section class="feature">
+          <img src="img/work3.png"
+          width="420" height="270" alt="特徴３">
+          <div class="desc">
+            <h1>カードあてゲーム</h1>
+            <p>５枚のカードのうち１枚がアタリだよ<br>
+              クリックしてあててみよう！
+            </p>
+            <a href="https://yuma2000.github.io/assessment/cards.html" target="_blank"
+        class="btn">ゲームをする <i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </section>
+        <section class="feature">
+          <img src="img/feature1.png"
+          width="420" height="270" alt="特徴４">
+          <div class="desc">
+            <h1>タイピングゲーム</h1>
+            <p>あなたのタイピング速度を測ってみよう</p>
+            <a href="https://yuma2000.github.io/assessment/typing.html" target="_blank"
+        class="btn">ゲームをする <i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </section>
+      </div>
+
+    </section>
+
+    <section class="voices">
+      <div class="container">
+        <h1 data-subtitle="- Voices -" class="section-title">利用者の声</h1>
+        <div class="flex">
+          <section class="voice">
+            <img src="img/user1.png"
+            width="90" height="90" alt="利用者A">
+            <h1>利用者A</h1>
+            <p>いい感じです。いい感じです。いい感じです。いい感じです。いい感じです。いい感じです。いい感じです。いい感じです。</p>
+          </section>
+          <section class="voice">
+            <img src="img/user2.png"
+            width="90" height="90" alt="利用者B">
+            <h1>利用者B</h1>
+            <p>いい感じです。いい感じです。いい感じです。いい感じです。いい感じです。いい感じです。いい感じです。いい感じです。</p>
+          </section>
+          <section class="voice">
+            <img src="img/user3.png"
+            width="90" height="90" alt="利用者C">
+            <h1>利用者C</h1>
+            <p>いい感じです。いい感じです。いい感じです。いい感じです。いい感じです。いい感じです。いい感じです。いい感じです。</p>
+          </section>
+
+
+        </div>
+      </div>
+
+    </section>
+    <section class="call-to-action orange-bg">
+      <div class="container">
+        <h1 class="section-title">プログラミングを勉強してみよう！</h1>
+        <a href="https://prog-8.com/" target="_blank"
+        class="btn">詳細を見る <i class="fas fa-external-link-alt"></i></a>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; takeda.com</p>
+    </footer>
+
+    <script>
+      {
+        const timer = document.getElementById('timer');
+        const start = document.getElementById('start');
+        const stop = document.getElementById('stop');
+        const reset = document.getElementById('reset');
+
+        let startTime;
+        let timeoutId;
+        let elapsedTime = 0;
+
+        function countUp(){
+          const d = new Date(Date.now() - startTime + elapsedTime);
+          const m = d.getMinutes();
+          const s = d.getSeconds();
+          const ms = d.getMilliseconds();
+          timer.textContent = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}.${String(ms).padStart(3, '0')}`;
+
+          timeoutId = setTimeout(() => {
+            countUp();
+          }, 10);
+        }
+
+        function setButtonStateInitial() {
+          start.classList.remove('inactive');
+          stop.classList.add('inactive');
+          reset.classList.add('inactive');
+        }
+
+        function setButtonStateRunning() {
+          start.classList.add('inactive');
+          stop.classList.remove('inactive');
+          reset.classList.add('inactive');
+        }
+
+        function setButtonStateStopped() {
+          start.classList.remove('inactive');
+          stop.classList.add('inactive');
+          reset.classList.remove('inactive');
+        }
+
+        setButtonStateInitial();
+
+        start.addEventListener('click', () => {
+          if(start.classList.contains('inactive') === true) {
+            return;
+          }
+          setButtonStateRunning();
+          startTime = Date.now();
+          countUp();
+        })
+
+        stop.addEventListener('click', () => {
+          if(stop.classList.contains('inactive') === true) {
+            return;
+          }
+          setButtonStateStopped();
+          clearTimeout(timeoutId);
+          elapsedTime += Date.now() - startTime;
+        })
+
+        reset.addEventListener('click', () => {
+          if(reset.classList.contains('inactive') === true) {
+            return;
+          }
+          setButtonStateInitial();
+          timer.textContent = '00:00.000';
+          elapsedTime = 0;
+        })
+      }
+
+    </script>
+  </body>
+</html>
